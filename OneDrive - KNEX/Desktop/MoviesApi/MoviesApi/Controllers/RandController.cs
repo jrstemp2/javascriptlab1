@@ -48,6 +48,7 @@ namespace MoviesApi.Controllers
             }
             else
             {
+                //IEnumerable<Movie> Movies = dal.GetMoviesByCategory(category);
                 Movie M = dal.GetRandomMovieByCategory(category);
                 return M; //serialize the parameter into JSON and return an Ok (20x)
             }

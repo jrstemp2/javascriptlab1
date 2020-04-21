@@ -48,7 +48,7 @@ namespace MoviesApi.Services
         public IEnumerable<Movie> GetMoviesByCategory(string category)
         {
             SqlConnection connection = null;
-            string queryString = "SELECT * FROM Products WHERE Category = @cat";
+            string queryString = "SELECT * FROM Films WHERE Category = @cat";
             IEnumerable<Movie> Movies = null;
 
             try
@@ -86,7 +86,7 @@ namespace MoviesApi.Services
         public Movie GetRandomMovieByCategory(string category)
         {
             SqlConnection connection = null;
-            string queryString = "SELECT * FROM Films WHERE Categoru = @val ORDER BY NEWID()";
+            string queryString = "SELECT * FROM Films WHERE Category = @val ORDER BY NEWID()";
             Movie M = null;
             connection = new SqlConnection(connectionString);
             M = connection.QueryFirstOrDefault<Movie>(queryString, new { val = category});
