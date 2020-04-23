@@ -32,7 +32,7 @@ namespace NorthwindAPI.Controllers
             return result;
         }
 
-        //GET ALL Products
+        //-------------------------------------NEW---------------------------------------------
         [HttpGet]
         public IEnumerable<Product> GetAllProducts()
         {
@@ -41,6 +41,17 @@ namespace NorthwindAPI.Controllers
             var result = conn.Query<Product>(command);
             return result;
         }
+
+        [HttpGet("ByCategory/{id}")]
+        public IEnumerable<Product> GetAllProducts(string id)
+        {
+            int id1 = int.Parse(id);
+            SqlConnection conn = new SqlConnection(connectionString);
+            string command = "SELECT * FROM Products WHERE CategoryId = @val";
+            var result = conn.Query<Product>(command, new { val = id1});
+            return result;
+        }
+
 
 
         [HttpPost]
