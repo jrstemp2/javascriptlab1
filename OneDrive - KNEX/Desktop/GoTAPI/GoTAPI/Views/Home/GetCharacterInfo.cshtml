@@ -1,0 +1,17 @@
+﻿@model Character
+@{
+    ViewData["Title"] = "GetCharacterInfo";
+
+}
+
+<h1>GetCharacterInfo</h1>
+<p>Name: @Model.Name</p>
+<p>Culture: @Model.Culture</p>
+<p>Gender: @Model.Gender</p>
+<p>Born: @Model.Born</p>
+@*<p>@Model.Allegiances</p>*@
+
+@*@for(int i = 0; i < numItems; i++)
+    {
+        <p>@Model.Houses[i].Name</p>
+    }*@

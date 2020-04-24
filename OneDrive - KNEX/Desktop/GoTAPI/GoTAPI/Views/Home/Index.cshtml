@@ -1,0 +1,22 @@
+﻿@model Character
+@{
+    ViewData["Title"] = "Home Page";
+    
+}
+
+<div class="text-center">
+    <h1 class="display-4">Winter Is Coming</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form asp-controller="Home" asp-action="GetCharacterInfo">
+    <label>Choose Your Favorite Character</label>
+    <select asp-for="Name">
+        <option>Jon Snow</option>
+        <option>Denys Mallister</option>
+        <option>Asha Greyjoy</option>
+        <option>Merrell Florent</option>
+        <option>Dennis Plumm</option>
+    </select>
+    <input type="submit" value="Get Info"/>
+</form>
