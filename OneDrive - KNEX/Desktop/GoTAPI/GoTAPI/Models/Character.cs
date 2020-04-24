@@ -13,7 +13,7 @@ namespace GoTAPI.Models
         public string Culture { get; set; }
         public string Gender {get; set;}
         public string Born { get; set; }
-        
+        public string[] Aliases { get; set; }
 
     }
 

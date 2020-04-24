@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JSTEMPOWSKI\\OneDrive - Knex\\Desktop\\GoTAPI\\GoTAPI\\GoTAPI.csproj": {}
+    "C:\\Users\\JSTEMPOWSKI\\OneDrive - KNEX\\Desktop\\GoTAPI\\GoTAPI\\GoTAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JSTEMPOWSKI\\OneDrive - Knex\\Desktop\\GoTAPI\\GoTAPI\\GoTAPI.csproj": {
+    "C:\\Users\\JSTEMPOWSKI\\OneDrive - KNEX\\Desktop\\GoTAPI\\GoTAPI\\GoTAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JSTEMPOWSKI\\OneDrive - Knex\\Desktop\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
+        "projectUniqueName": "C:\\Users\\JSTEMPOWSKI\\OneDrive - KNEX\\Desktop\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
         "projectName": "GoTAPI",
-        "projectPath": "C:\\Users\\JSTEMPOWSKI\\OneDrive - Knex\\Desktop\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
-        "packagesPath": "C:\\Users\\JStempowski-\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JSTEMPOWSKI\\OneDrive - Knex\\Desktop\\GoTAPI\\GoTAPI\\obj\\",
+        "projectPath": "C:\\Users\\JSTEMPOWSKI\\OneDrive - KNEX\\Desktop\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
+        "packagesPath": "C:\\Users\\JSTEMPOWSKI\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JSTEMPOWSKI\\OneDrive - KNEX\\Desktop\\GoTAPI\\GoTAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\JStempowski-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JSTEMPOWSKI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

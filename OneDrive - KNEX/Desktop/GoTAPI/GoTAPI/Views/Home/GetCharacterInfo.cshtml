@@ -9,6 +9,12 @@
 <p>Culture: @Model.Culture</p>
 <p>Gender: @Model.Gender</p>
 <p>Born: @Model.Born</p>
+
+
+@foreach (string s in Model.Aliases)
+{
+    <p>@s</p>
+}
 @*<p>@Model.Allegiances</p>*@
 
 @*@for(int i = 0; i < numItems; i++)
