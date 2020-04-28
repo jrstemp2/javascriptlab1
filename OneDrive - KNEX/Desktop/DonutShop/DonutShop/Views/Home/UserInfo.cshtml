@@ -1,0 +1,171 @@
+﻿
+@{
+    ViewData["Title"] = "UserInfo";
+}
+
+<h1>Register as a New User</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UserInfo" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label class="control-label" id="FirstNameLabel" for="FirstName">First Name</label>
+                <input class="form-control" type="text" id="FirstName" name="FirstName" value="" />
+                <span class="text-danger field-validation-valid" id="FirstNameFeedback"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" id="LastNameLabel" for="LastName">Last Name</label>
+                <input class="form-control" type="text" id="LastName" name="LastName" value="" />
+                <span class="text-danger field-validation-valid" id="LastNameFeedback"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" id="EmailLabel" for="Email">Email</label>
+                <input class="form-control" type="text" id="Email" name="Email" value="" />
+                <span class="text-danger field-validation-valid" id="EmailFeedback"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" id="PasswordLabel" for="Password">Password</label>
+                <input class="form-control" type="password" id="Password" name="Password" value="" />
+                <span class="text-danger field-validation-valid" id="PasswordFeedback"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" id="ConfirmPasswordLabel" for="ConfirmPassword">Confirm Password</label>
+                <input class="form-control" type="password" id="ConfirmPassword" name="ConfirmPassword" value="" />
+                <span class="text-danger field-validation-valid" id="ConfirmPaswordFeedback"></span>
+            </div>
+
+            <div id="Feedback"></div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        let resultFirstName = validateFirstName();
+        let resultLastName = validateLastName();
+        let resultEmail = validateEmail();
+        let resultPassword = validatePassword();
+        
+        
+        let result = resultFirstName && resultLastName && resultEmail && resultPassword;
+        
+
+        if (!result) {
+            document.querySelector("#Feedback").innerHTML = "Your form has errors. See above.";
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function validateFirstName() {
+        let firstName = document.querySelector("#FirstName").value;
+        let warning = '';
+        if (!firstName || firstName.length < 3) {
+            warning += 'First Name is empty or too short. ';
+        } else if (firstName.length > 30) {
+            warning += 'First Name is too long. ';
+        }
+        if (warning == '') {
+            document.querySelector("#FirstNameLabel").classList.remove('red');
+            document.querySelector("#FirstNameFeedback").innerHTML = '';
+            return true;
+        } else {
+            //display the warning in the span set up for it
+            document.querySelector("#FirstNameFeedback").innerHTML = warning;
+            //add a CSS class to an element
+            document.querySelector("#FirstNameLabel").classList.add('red');
+            return false;
+        }
+    }
+    function validateLastName() {
+        let lastName = document.querySelector("#LastName").value;
+        let warning = '';
+        if (!lastName || lastName.length < 3) {
+            warning += 'LastName is empty or too short. ';
+        } else if (lastName.length > 30) {
+            warning += 'Last Name is too long. ';
+        }
+        if (warning == '') {
+            document.querySelector("#LastNameLabel").classList.remove('red');
+            document.querySelector("#LastNameFeedback").innerHTML = '';
+            return true;
+        } else {
+            //display the warning in the span set up for it
+            document.querySelector("#LastNameFeedback").innerHTML = warning;
+            //add a CSS class to an element
+            document.querySelector("#LastNameLabel").classList.add('red');
+            return false;
+        }
+    }
+
+    function validateEmail() {
+        let emailAddress = document.querySelector("#Email").value;
+        let warning = '';
+        let re = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+ 
+        if (!emailAddress || emailAddress.length < 6 || !re.test(emailAddress)) {
+            warning += 'Email is empty or too short. ';
+        } else if (emailAddress.length > 30) {
+            warning += 'Email is too long. ';
+        }
+        if (warning == '') {
+            document.querySelector("#EmailLabel").classList.remove('red');
+            document.querySelector("#EmailFeedback").innerHTML = '';
+            return true;
+        } else {
+            //display the warning in the span set up for it
+            document.querySelector("#EmailFeedback").innerHTML = warning;
+            //add a CSS class to an element
+            document.querySelector("#EmailLabel").classList.add('red');
+            return false;
+        }
+    }
+
+    function validatePassword() {
+        let pWord1 = document.querySelector("#Password").value;
+        let pWord2 = document.querySelector("#ConfirmPassword").value;
+
+        let warning = '';
+        let re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@@#\$%\^&\*])(?=.*[0-9])(?=.{10,})/;
+
+        
+        
+        
+
+        if (!pWord1 || pWord1.length < 3) {
+            warning += 'password is too short. ';
+        } else if (pWord1.length > 30) {
+            warning += 'Password too long. ';
+        }
+        else if (pWord1 != pWord2) {
+
+            warning += 'Passwords do not match';
+        }
+        else if (!re.test(pWord1)) {
+            warning += 'Please check the format';
+        }
+
+
+        if (warning == '') {
+            document.querySelector("#PasswordLabel").classList.remove('red');
+            document.querySelector("#PasswordFeedback").innerHTML = '';
+            return true;
+        } else {
+            //display the warning in the span set up for it
+            document.querySelector("#PasswordFeedback").innerHTML = warning;
+            //add a CSS class to an element
+            document.querySelector("#PasswordLabel").classList.add('red');
+            return false;
+        }
+    }
+
+</script>
+
